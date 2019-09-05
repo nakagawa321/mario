@@ -35,6 +35,7 @@ public class CollisionManager : MonoBehaviour
     // 針の当たり判定処理
     public void needle_hit_test_process()
     {
+
         // ライフゲージ消す
         if (life[2] != null)
         {
