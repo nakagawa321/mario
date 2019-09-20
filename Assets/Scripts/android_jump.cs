@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class android_jump : MonoBehaviour
 {
+    public Animator animator;
     public Control control = new Control(); // コントロールスクリプト
     public GameObject Teddy;
     public Rigidbody rb;
@@ -26,6 +27,7 @@ public class android_jump : MonoBehaviour
     {
         if (control.Getjump_judgement() == true)
         {
+            animator.SetTrigger("is_jump"); // アニメーション
             rb.AddForce(Vector3.up * 2500); // 飛ぶ処理
             control.Setjump_judgement(false); // 地面と触れていない
             musicManager.Play_sound1(); //音楽

@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class AndroidController : MonoBehaviour
 {
     public GameObject player;
+    public Animator animator;
     bool right = false;
     //  右ボタンを押しているかの真偽値
     bool left = false;
     //  左ボタンを押しているかの真偽値
-    private float speed = 0.06f;
+    private float speed = 0.1f;
 
 
     // Use this for initialization
@@ -23,13 +24,18 @@ public class AndroidController : MonoBehaviour
     {
         if (right)
         {
+            animator.SetBool("is_running", true); // アニメーション開始
             goright();
             //          右に動かすためのメソッドを呼び出す
         }
         else if (left)
         {
+            animator.SetBool("is_running", true); // アニメーション開始
             goleft();
             //          左に動かすためのメソッドを呼び出す
+        } else
+        {
+            animator.SetBool("is_running", false); // アニメーション停止
         }
 
     }
